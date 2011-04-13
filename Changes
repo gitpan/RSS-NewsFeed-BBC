@@ -1,4 +1,11 @@
 Revision history for RSS-NewsFeed-BBC
 
+0.02    Wed Apt 13 16:00:00 2011
+        - Added method as_string() and also made it overloaded in scalar context.
+        - Fixed the typo in the example pod for method get_international().
+        - Fixed the typo in the example pod for method get_title().
+        - Fixed the typo in the example pod for method get_url().
+        - Fixed the typo in the example pod for method get_description().
+
 0.01    Wed Apr 13 11:47:00 2011
         - First version released.

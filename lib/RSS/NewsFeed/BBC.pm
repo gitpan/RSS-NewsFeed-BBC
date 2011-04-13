@@ -2,6 +2,8 @@ package RSS::NewsFeed::BBC;
 
 use strict;use warnings;
 
+use overload q("") => \&as_string, fallback => 1;
+
 use Carp;
 use Readonly;
 use LWP::Simple;
@@ -14,11 +16,11 @@ RSS::NewsFeed::BBC - Interface to BBC News Feed.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 Readonly my $NATIONAL      => 'http://feeds.bbci.co.uk/news/rss.xml';
 Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int';
@@ -36,7 +38,7 @@ sub new
 
 =head2 get_title()
 
-Returns the news feed title. This should be called after method get_national_news() or get_international_news().
+Returns the news feed title. This should be called after method get_national() or get_international().
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -55,7 +57,7 @@ sub get_title
 
 =head2 get_url()
 
-Returns the news feed URL. This should be called after method get_national_news() or get_international_news().
+Returns the news feed URL. This should be called after method get_national() or get_international().
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -74,7 +76,7 @@ sub get_url
 
 =head2 get_description()
 
-Returns the news feed description. This should be called after method get_national_news() or get_international_news().
+Returns the news feed description. This should be called after method get_national() or get_international().
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -116,8 +118,8 @@ Returns the BBC international news.
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
     
-    my $news     = RSS::NewsFeed::BBC->new();
-    my $national = $news->get_international();
+    my $news          = RSS::NewsFeed::BBC->new();
+    my $international = $news->get_international();
 
 =cut
 
@@ -125,6 +127,38 @@ sub get_international
 {
     my $self = shift;
     return $self->_fetch_news($INTERNATIONAL);    
+}
+
+=head2 as_string()
+
+Returns latest news in a human readable format.
+
+    use strict; use warnigns;
+    use RSS::NewsFeed::BBC;
+    
+    my $news     = RSS::NewsFeed::BBC->new();
+    my $national = $news->get_national();
+
+    print $news->as_string();
+
+    # or even simply
+    print $news;
+
+=cut
+
+sub as_string
+{
+    my $self = shift;
+    my ($news);
+    
+    foreach (@{$self->{_news}})
+    {
+        $news .= sprintf("      Title: %s\n", $_->{title});
+        $news .= sprintf("        URL: %s\n", $_->{url});
+        $news .= sprintf("Description: %s\n", $_->{description});
+        $news .= "-------------------\n";
+    }
+    return $news;
 }
 
 sub _fetch_news

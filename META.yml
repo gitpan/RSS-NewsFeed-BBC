@@ -1,0 +1,24 @@
+---
+abstract: 'Interface to BBC News Feed.'
+author:
+  - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
+build_requires:
+  LWP::Simple: 5.827
+  Readonly: 0
+  Test::More: 0
+  XML::RSS::Parser::Lite: 0.10
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: RSS-NewsFeed-BBC
+provides:
+  RSS::NewsFeed::BBC:
+    file: lib/RSS/NewsFeed/BBC.pm
+    version: 0.01
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01

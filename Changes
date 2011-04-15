@@ -1,6 +1,9 @@
 Revision history for RSS-NewsFeed-BBC
 
-0.02    Wed Apt 13 16:00:00 2011
+0.03    Fri Apr 15 09:46:29 2011
+        - Added XML::Parser::Lite to the pre-requisite list of modules to Build.PL and Makefile.PL.
+
+0.02    Wed Apr 13 16:00:00 2011
         - Added method as_string() and also made it overloaded in scalar context.
         - Fixed the typo in the example pod for method get_international().
         - Fixed the typo in the example pod for method get_title().

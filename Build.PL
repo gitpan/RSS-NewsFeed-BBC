@@ -11,6 +11,7 @@ my $builder = Module::Build->new(
     build_requires    => {
         'Test::More'             => 0,
         'Readonly'               => 0,
+        'XML::Parser::Lite'      => 0,
         'LWP::Simple'            => '5.827',
         'XML::RSS::Parser::Lite' => '0.10'
     },

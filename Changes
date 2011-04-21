@@ -1,5 +1,12 @@
 Revision history for RSS-NewsFeed-BBC
 
+0.04    Thu Apr 21 18:24:11 2011
+        - Updated constructor to initialize title, url and description.
+        - Updated pod for method get_title().
+        - Updated pod for method get_url().
+        - Updated pod for method get_description().
+        - Minor cosmetics changes.
+
 0.03    Fri Apr 15 09:46:29 2011
         - Added XML::Parser::Lite to the pre-requisite list of modules to Build.PL and Makefile.PL.
 

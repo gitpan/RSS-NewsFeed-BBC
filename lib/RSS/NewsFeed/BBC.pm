@@ -16,11 +16,11 @@ RSS::NewsFeed::BBC - Interface to BBC News Feed.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 Readonly my $NATIONAL      => 'http://feeds.bbci.co.uk/news/rss.xml';
 Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int';
@@ -28,7 +28,9 @@ Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int'
 sub new
 {
     my $class = shift;
-    my $self  = {};
+    my $self  = { '_title'       => 'Undefined',
+                  '_url'         => 'Undefined',
+                  '_description' => 'Undefined' };
     
     bless $self, $class;
     return $self;
@@ -38,7 +40,8 @@ sub new
 
 =head2 get_title()
 
-Returns the news feed title. This should be called after method get_national() or get_international().
+Returns the news feed title of national/internal BBC news. This  should *ONLY* be called after
+method get_national() or get_international(), otherwise it would return 'Undefined'.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -57,7 +60,8 @@ sub get_title
 
 =head2 get_url()
 
-Returns the news feed URL. This should be called after method get_national() or get_international().
+Returns  the  news feed URL of national/internal BBC news. This  should *ONLY* be called after
+method get_national() or get_international(), otherwise it would return 'Undefined'.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -76,7 +80,8 @@ sub get_url
 
 =head2 get_description()
 
-Returns the news feed description. This should be called after method get_national() or get_international().
+Returns the news feed description of national/internal BBC news. This  should *ONLY* be called
+after method get_national() or get_international(), otherwise it would return 'Undefined'.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -95,7 +100,7 @@ sub get_description
 
 =head2 get_national()
 
-Returns the BBC national news.
+Returns the BBC National news.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -113,7 +118,7 @@ sub get_national
 
 =head2 get_international()
 
-Returns the BBC international news.
+Returns the BBC International news.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -192,9 +197,10 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-rss-newsfeed-bbc at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=RSS-NewsFeed-BBC>.  
-I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
+Please  report  any  bugs  or  feature  requests to C<bug-rss-newsfeed-bbc at rt.cpan.org>, or
+through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=RSS-NewsFeed-BBC>.  
+I will be notified,  and  then you will automatically be notified of progress on your bug as I
+make changes.
 
 =head1 SUPPORT
 
@@ -226,23 +232,24 @@ L<http://search.cpan.org/dist/RSS-NewsFeed-BBC/>
 
 =head1 ACKNOWLEDGEMENTS
 
-RSS::NewsFeed::BBC provides information from BBC official website. This information should be 
-used as it is without any modifications. BBC remains the sole owner of the data. The terms and condition 
-for RSS Feed can be found here http://www.bbc.co.uk/terms/additional_rss.shtml.
+RSS::NewsFeed::BBC provides information from BBC official website.  This information should be
+used as it is without any modifications. BBC remains the sole owner of the data. The terms and
+condition for RSS Feed can be found here http://www.bbc.co.uk/terms/additional_rss.shtml.
 
 =head1 LICENSE AND COPYRIGHT
 
 Copyright 2011 Mohammad S Anwar.
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
+This  program  is  free  software; you can redistribute it and/or modify it under the terms of
+either:  the  GNU  General Public License as published by the Free Software Foundation; or the
+Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
 =head1 DISCLAIMER
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+This  program  is  distributed  in  the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut
 

@@ -16,11 +16,11 @@ RSS::NewsFeed::BBC - Interface to BBC News Feed.
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 Readonly my $NATIONAL      => 'http://feeds.bbci.co.uk/news/rss.xml';
 Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int';
@@ -136,7 +136,7 @@ sub get_international
 
 =head2 as_xml()
 
-Returns latest news in in XML format. This should *ONLY* be called after method get_national()
+Returns latest news in the XML format.This should *ONLY* be called after method get_national()
 or get_international().
 
     use strict; use warnigns;

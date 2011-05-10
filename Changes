@@ -1,5 +1,9 @@
 Revision history for RSS-NewsFeed-BBC
 
+0.05    Tue May 10 10:33:21 2011
+        - Added method as_xml() to return the news item in XML format.
+        - Minor text change to the pod of method get_title(), get_url() and get_description().
+
 0.04    Thu Apr 21 18:24:11 2011
         - Updated constructor to initialize title, url and description.
         - Updated pod for method get_title().

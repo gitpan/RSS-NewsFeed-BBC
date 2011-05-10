@@ -16,11 +16,11 @@ RSS::NewsFeed::BBC - Interface to BBC News Feed.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 Readonly my $NATIONAL      => 'http://feeds.bbci.co.uk/news/rss.xml';
 Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int';
@@ -40,8 +40,8 @@ sub new
 
 =head2 get_title()
 
-Returns the news feed title of national/internal BBC news. This  should *ONLY* be called after
-method get_national() or get_international(), otherwise it would return 'Undefined'.
+Returns the news feed title of national/international  BBC news. This  should *ONLY* be called
+after method get_national() or get_international(), otherwise it will return Undefined.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -60,8 +60,8 @@ sub get_title
 
 =head2 get_url()
 
-Returns  the  news feed URL of national/internal BBC news. This  should *ONLY* be called after
-method get_national() or get_international(), otherwise it would return 'Undefined'.
+Returns  the  news feed URL of national/international  BBC news. This  should *ONLY* be called
+after method get_national() or get_international(), otherwise it will return Undefined.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -80,8 +80,8 @@ sub get_url
 
 =head2 get_description()
 
-Returns the news feed description of national/internal BBC news. This  should *ONLY* be called
-after method get_national() or get_international(), otherwise it would return 'Undefined'.
+Returns  the  news feed description of national/international BBC news. This  should *ONLY* be
+called after method get_national() or get_international(), otherwise it will return Undefined.
 
     use strict; use warnigns;
     use RSS::NewsFeed::BBC;
@@ -132,6 +132,38 @@ sub get_international
 {
     my $self = shift;
     return $self->_fetch_news($INTERNATIONAL);    
+}
+
+=head2 as_xml()
+
+Returns latest news in in XML format. This should *ONLY* be called after method get_national()
+or get_international().
+
+    use strict; use warnigns;
+    use RSS::NewsFeed::BBC;
+    
+    my $news     = RSS::NewsFeed::BBC->new();
+    my $national = $news->get_national();
+
+    print $news->as_xml();
+
+=cut
+
+sub as_xml
+{
+    my $self = shift;
+    my $xml = qq {<?xml version="1.0" encoding="UTF-8"?>\n};
+    $xml.= qq {<news>\n};
+    foreach (@{$self->{_news}})
+    {
+        $xml .= qq {\t<item>\n};
+        $xml .= qq {\t\t<title> $_->{title} </title>\n};
+        $xml .= qq {\t\t<url> $_->{url} </url>\n};
+        $xml .= qq {\t\t<description> $_->{description} </description>\n};
+        $xml .= qq {\t</item>\n};
+    }
+    $xml.= qq {</news>};
+    return $xml;
 }
 
 =head2 as_string()

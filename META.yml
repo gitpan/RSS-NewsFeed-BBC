@@ -4,7 +4,7 @@ author:
   - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
 build_requires:
   LWP::Simple: 5.827
-  Readonly: 0
+  Readonly: 1.03
   Test::More: 0
   XML::Parser::Lite: 0
   XML::RSS::Parser::Lite: 0.10
@@ -19,7 +19,7 @@ name: RSS-NewsFeed-BBC
 provides:
   RSS::NewsFeed::BBC:
     file: lib/RSS/NewsFeed/BBC.pm
-    version: 0.06
+    version: 0.07
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.06
+version: 0.07

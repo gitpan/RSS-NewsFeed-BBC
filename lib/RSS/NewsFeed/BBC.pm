@@ -16,11 +16,11 @@ RSS::NewsFeed::BBC - Interface to BBC News Feed.
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 Readonly my $NATIONAL      => 'http://feeds.bbci.co.uk/news/rss.xml';
 Readonly my $INTERNATIONAL => 'http://feeds.bbci.co.uk/news/rss.xml?edition=int';

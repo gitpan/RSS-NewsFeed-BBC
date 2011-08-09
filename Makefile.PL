@@ -10,7 +10,7 @@ WriteMakefile(
     clean         => { FILES => 'RSS-NewsFeed-BBC-*' },
     PREREQ_PM     => {
         'Test::More'             => 0,
-        'Readonly'               => 0,
+        'Readonly'               => '1.03',
         'XML::Parser::Lite'      => 0,
         'LWP::Simple'            => '5.827',
         'XML::RSS::Parser::Lite' => '0.10'

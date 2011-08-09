@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.66.
+signed via the Module::Signature module, version 0.68.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,25 +14,25 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 4b9128447088097d7a4213543b79ec6ce31bb268 Build.PL
-SHA1 0e27aa2cc76460ece479230c987710b35f33803a Changes
+SHA1 a7c799fa0bb1c89e624fb75dfa2e037ffb797893 Build.PL
+SHA1 80474869c390ffa5b721f278edfe0504a53245b6 Changes
 SHA1 bf1a6f69c1f0fe1a22248ab29228b8629a7ec2da MANIFEST
 SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
-SHA1 0edb9bcc498b55bd46607f8333de4dec13d58217 META.yml
-SHA1 d4607b40afb1d84441212870aefd30b15f5cb94b Makefile.PL
-SHA1 1137d20654f0fc36b63027c1ebadc38c6a803368 README
-SHA1 2033c247bd67ef2194757f72d0607e589a8a45cc lib/RSS/NewsFeed/BBC.pm
+SHA1 ecbf8013cd6453ec0a6fa66d266851130683a278 META.yml
+SHA1 4d6115235079fc49f0cd679233ee3d4c4e2f50a0 Makefile.PL
+SHA1 fed38577cbbb325b31bfcd8b1e352d9351cd1f8e README
+SHA1 d12c74ce1d99318509f31e9165a5296f0209baa8 lib/RSS/NewsFeed/BBC.pm
 SHA1 7e56cad471d5ec855e02ba2ac849b758e557fe2a t/00-load.t
 SHA1 2b8ffb7e4f399af95d092743846ac8d438f2c53e t/manifest.t
 SHA1 0765c9ff0cc4319f415bb08d0053b7717a8284a2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2.0.14 (MingW32)
 
-iQEcBAEBAgAGBQJNySnGAAoJEPYcXBXhRYOhncYH/2V36u+JBj5h1xCPDjF1ZHJa
-1BK/p7rUGtwafvgjQGzVpRrbl8k5MWlQm0YdXrdTUG+64VBDVLy0lGaoSDYAYXA/
-dshOl+AZwCcJTtwfXosN6fJtm7JXV/RsEXTiIX3MkNxpb1BZI/93isaeaQ7WyenD
-dR7u0qgqMEa5GucEGAcNPZuJIpxIqAvmGQ0uqFSYk9XRs4ZcfV8dNHBxE0k2VK0O
-GklrKLJqEmXudINHyHlVVO13yCgGbmAyQ0vfJLLeew5GQdc7Oj1fBIP34EqRU97g
-cDYEcMhvvJi5oyGTpEuefBH1UBGD08UjzF32oWryfWbPyRljMJx33ws+LNDjhaA=
-=yPdT
+iQEcBAEBAgAGBQJOQSEHAAoJEPYcXBXhRYOhzlUIAII7ybazU5bWkEJgvwRiJ3y3
+UN2uabnGsDHwlT8YhriCkB9rcEkF2evPAmgXxZNod3uWavYHrvDDG7qJgRrsQxRG
+amAatkNLNGen1ccHqyx6+HXnSjGxHgmGkaXIh8cYzNyfNKEBOdL87Sqa1UMVouqj
+Lrxf5atGpdqOcdlkZHE7a0+InmQI5vKdzh+7vZJeX6rxsY0tSyFSWBxppSZnZ61Z
+ux6/Dnrv3rorV7N2mNtusb/zSCqUXYQGQ+q4D4EBFHdhZSEN7Mjs+26K+2NSGvJL
+KjfQ9ky4gDkpEZY1BtASFs5QHrj0wvBBIPk2PdtMt0Vexj2KT3L82e5HSLlK1mg=
+=YOFZ
 -----END PGP SIGNATURE-----
